@@ -2,11 +2,11 @@
 ## Overview
 This project is a web crawler developed in Go that leverages MongoDB to archive crawled web pages. You can run the crawler locally even if you don't connect to the web archive.
 
-![Web Crawler Terminal Output](https://github.com/BobTheBlobFish/SpideyWebCrawler/tree/main/images/web-crawler-cmd.png)
+![Web Crawler Terminal Output](https://raw.githubusercontent.com/BobTheBlobFish/SpideyWebCrawler/main/images/web-crawler-cmd.png)
 
 ## How it works
 Here's the the data flow of the web crawler:
-![Web Crawler Diagram](https://github.com/BobTheBlobFish/SpideyWebCrawler/tree/main/images/web-crawler-diagram.png)
+![Web Crawler Diagram](https://raw.githubusercontent.com/BobTheBlobFish/SpideyWebCrawler/main/images/web-crawler-diagram.png)
 
 ## Web Archive
 To store the content of crawled web pages, I used MongoDB, a NoSQL database with a built-in Search Index functionality. 
@@ -16,16 +16,16 @@ I decided to store the `url`, `title`, and first 500 characters after the `<body
 This created an inverted index table which mapped keywords to webpages. 
 
 The Search Tester GUI allowed me to query the web archive.
-![Searching for master's in computer science](https://github.com/BobTheBlobFish/SpideyWebCrawler/tree/main/images/web-archive.png)
+![Searching for master's in computer science](https://raw.githubusercontent.com/BobTheBlobFish/SpideyWebCrawler/main/images/web-archive.png)
 
 ## Performance
 In my program, I used Go's built-in Time library to record the Crawl Statistics every minute. The statistics included:
 - Crawl Speed: Pages / second
 - Crawled to Queued Ratio / second
 
-![Crawl speed graph](https://github.com/BobTheBlobFish/SpideyWebCrawler/tree/main/images/crawl-speed-graph.png)
+![Crawl speed graph](https://raw.githubusercontent.com/BobTheBlobFish/SpideyWebCrawler/main/images/crawl-speed-graph.png)
 
-![Crawl ratio graph](https://github.com/BobTheBlobFish/SpideyWebCrawler/tree/main/images/crawl-ratio-graph.png)
+![Crawl ratio graph](https://raw.githubusercontent.com/BobTheBlobFish/SpideyWebCrawler/main/images/crawl-ratio-graph.png)
 ## Experience
 I chose to use simple technologies for the web crawler in order to fully understand all the components of the system. The only external services/libraries I used were MongoDB Atlas Search for the implementation of the searchable web archive. All other operations including fetching webpages, parsing HTML, threading, and benchmarking were done using Go's standard library. With this approach, I prioritized simplicity which will allow me to easily expand on this software in the future.
 
